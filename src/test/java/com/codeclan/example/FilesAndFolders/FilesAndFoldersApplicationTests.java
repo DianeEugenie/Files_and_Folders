@@ -1,5 +1,11 @@
 package com.codeclan.example.FilesAndFolders;
 
+import com.codeclan.example.FilesAndFolders.models.File;
+import com.codeclan.example.FilesAndFolders.models.Folder;
+import com.codeclan.example.FilesAndFolders.models.User;
+import com.codeclan.example.FilesAndFolders.repositories.FileRepository;
+import com.codeclan.example.FilesAndFolders.repositories.FolderRepository;
+import com.codeclan.example.FilesAndFolders.repositories.UserRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +38,7 @@ public class FilesAndFoldersApplicationTests {
 		folderRepository.save(folder);
 
 		File file = new File("All that jazz", "mp3", 55.5, folder);
+		fileRepository.save(file);
 	}
 
 }
