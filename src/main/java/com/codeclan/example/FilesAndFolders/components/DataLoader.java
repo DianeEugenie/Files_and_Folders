@@ -31,11 +31,17 @@ public class DataLoader implements ApplicationRunner {
         User user = new User("Jazz McJazzy");
         userRepository.save(user);
 
+        User user2 = new User("Metty McMetalHead");
+        userRepository.save(user2);
+
         Folder folder = new Folder("Jazzy Things", user);
         folderRepository.save(folder);
 
         Folder folder2 = new Folder("Pop Things", user);
         folderRepository.save(folder2);
+
+        Folder folder3 = new Folder("Metal Things", user2);
+        folderRepository.save(folder3);
 
         File file = new File("All that jazz", "mp3", 55.5, folder);
         fileRepository.save(file);
