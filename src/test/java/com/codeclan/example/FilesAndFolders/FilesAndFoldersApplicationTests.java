@@ -1,6 +1,7 @@
 package com.codeclan.example.FilesAndFolders;
 
-import com.codeclan.example.FilesAndFolders.models.File;
+//import com.codeclan.example.FilesAndFolders.models.File;
+//import com.codeclan.example.FilesAndFolders.models.Folder;
 import com.codeclan.example.FilesAndFolders.models.Folder;
 import com.codeclan.example.FilesAndFolders.models.User;
 import com.codeclan.example.FilesAndFolders.repositories.FileRepository;
@@ -30,15 +31,18 @@ public class FilesAndFoldersApplicationTests {
 	}
 
 	@Test
-	public void canSaveUserFolderFile(){
-		User user = new User("Jazz McJazzy");
+	public void canCreateUser(){
+		User user = new User("Billy");
+		userRepository.save(user);
+	}
+
+	@Test
+	public void canCreateFolder(){
+		User user = new User("Billy");
 		userRepository.save(user);
 
-		Folder folder = new Folder("Jazzy Things", user);
+		Folder folder = new Folder("Billy's Folder", user);
 		folderRepository.save(folder);
-
-		File file = new File("All that jazz", "mp3", 55.5, folder);
-		fileRepository.save(file);
 	}
 
 }
